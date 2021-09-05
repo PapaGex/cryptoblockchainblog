@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "The Birth of the Crypto-Blockchain-Junkie",
+      "author": "crypto-blockchain-junkie",
+      "body": "I remember it as if it were yesterday, being truthful you never forget the first time you witness a steady stream of blood flow out the end of your penis when you are taking a piss.",
+      "id": 1
+    },
+    {
+      "title": "The Hardware of Hashes",
+      "author": "Jonathan Lang",
+      "body": "I am not sure why But I have always loved things that transform the intangible into tangible",
+      "id": 2
+    },
+    {
+      "title": "Cold Storage for Global Warming",
+      "author": "Kawekaweau",
+      "body": "If you have anything left of working grey matter the prospects for our children or grandchildren are indeed grim",
+      "id": 3
+    }
+  ]
+}

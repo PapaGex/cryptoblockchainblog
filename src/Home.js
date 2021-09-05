@@ -2,13 +2,7 @@ import { useEffect, useState  } from 'react';
 import Bloglist from './Bloglist';
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([
-        { title: 'The Birth of the Crypto-Blockchain-Junkie', body: 'lorem ipsum...', author: 'crypto-blockchain-junkie', id: 1},
-        { title: 'The Hardware of Hashes', body: 'lorem ipsum...', author: 'crypto-blockchain-junkie', id: 2},
-        { title: 'Cold Storage for Global Warming', body: 'lorem ipsum...', author: 'crypto-blockchain-junkie', id: 3}
-    ]);
-
-    const [name , setName] = useState('kawekaweau')
+    const [blogs, setBlogs] = useState(null);
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
@@ -16,15 +10,18 @@ const Home = () => {
     }
 
     useEffect(() =>{
-        console.log('use effect');
-        console.log(name);
-    }, [name]);
+        fetch('http://localhost:7000/blogs')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+    }, []);
 
     return (
         <div className="home">
             <Bloglist blogs={blogs} title="All the Blogs!!!" handleDelete={handleDelete} />
-            <button onClick={() => setName('GiantGecko')}>Change Name</button>
-            <p>{ name }</p>
         </div>
     );
 }
